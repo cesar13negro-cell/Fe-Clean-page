@@ -1,88 +1,336 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lavado de Tapicería y Pulido de Pisos</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fe Clean - Limpieza y Mantenimiento Residencial</title>
+  <meta name="description" content="Fe Clean - Servicios profesionales de limpieza y mantenimiento residencial. Limpieza profunda, servicios recurrentes, mantenimiento y desinfección." />
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, Helvetica, sans-serif;
-        }
+  <!-- Estilos simples en línea para facilitar uso rápido -->
+  <style>
+    :root{
+      --primary:#00796b;
+      --accent:#ffd54f;
+      --muted:#6b7280;
+      --bg:#f7f7f8;
+      --card:#ffffff;
+      --radius:12px;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: light;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#f7f7f8, #ffffff 60%);
+      color:#111827;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    header{
+      background:var(--card);
+      position:sticky;
+      top:0;
+      z-index:20;
+      border-bottom:1px solid #eee;
+      backdrop-filter: blur(6px);
+    }
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:1rem;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:.75rem;
+      text-decoration:none;
+      color:inherit;
+    }
+    .logo{
+      width:44px;
+      height:44px;
+      background:var(--primary);
+      color:white;
+      display:inline-grid;
+      place-items:center;
+      font-weight:700;
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,.06);
+    }
+    nav a{color:var(--muted); text-decoration:none; margin-left:1rem}
+    .hero{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:1.25rem;
+      align-items:center;
+      padding:2.25rem 1rem;
+      text-align:center;
+    }
+    .hero-inner{
+      background:linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,.85));
+      padding:1.5rem;
+      border-radius:var(--radius);
+      box-shadow:0 8px 30px rgba(10,15,25,.06);
+      border:1px solid #f0f0f0;
+    }
+    h1{margin:0 0 .5rem; font-size:clamp(1.35rem, 3.8vw, 2.25rem)}
+    p.lead{margin:0; color:var(--muted)}
+    .cta{
+      margin-top:1rem;
+      display:flex;
+      gap:.75rem;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .btn{
+      background:var(--primary);
+      color:white;
+      border:none;
+      padding:.75rem 1.1rem;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:600;
+    }
+    .btn.secondary{
+      background:transparent;
+      color:var(--primary);
+      border:1.5px solid rgba(0,0,0,.06);
+    }
 
-        body{
-            background:#f4f4f4;
-            color:#333;
-        }
+    /* Servicios */
+    .grid{
+      display:grid;
+      gap:1rem;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      margin:1.25rem 0;
+    }
+    .card{
+      background:var(--card);
+      padding:1rem;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(15,20,30,.04);
+      border:1px solid #f3f4f6;
+    }
+    .service-icon{
+      width:44px;height:44px;border-radius:10px;
+      display:inline-grid;place-items:center;color:white;margin-bottom:.6rem;
+    }
+    .muted{color:var(--muted)}
 
-        header{
-            background:#0B5ED7;
-            color:white;
-            padding:20px;
-            text-align:center;
-        }
+    /* Sección contacto */
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:1rem;
+    }
+    form{
+      display:flex;
+      flex-direction:column;
+      gap:.5rem;
+    }
+    input,textarea,select{
+      padding:.6rem .75rem;
+      border-radius:8px;
+      border:1px solid #e6e7eb;
+      font:inherit;
+    }
+    textarea{min-height:110px; resize:vertical}
+    .row{
+      display:flex;
+      gap:.5rem;
+    }
+    .small{font-size:.9rem;color:var(--muted)}
+    footer{
+      margin-top:2rem;
+      padding:2rem 0;
+      color:var(--muted);
+      text-align:center;
+    }
 
-        nav{
-            background:#084298;
-            padding:10px;
-            text-align:center;
-        }
+    /* Responsivo */
+    @media(min-width:900px){
+      .hero{grid-template-columns:1fr 420px; text-align:left}
+      .hero-inner{padding:2rem}
+      .two-col{grid-template-columns:1fr 420px}
+      nav a{margin-left:1.25rem}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Navegación principal">
+      <a class="brand" href="#">
+        <div class="logo" aria-hidden="true">FC</div>
+        <div>
+          <div style="font-weight:700">Fe Clean</div>
+          <div class="small">Limpieza y Mantenimiento Residencial</div>
+        </div>
+      </a>
 
-        nav a{
-            color:white;
-            text-decoration:none;
-            margin:15px;
-            font-weight:bold;
-        }
+      <nav aria-label="Enlaces">
+        <a href="#servicios">Servicios</a>
+        <a href="#sobre-nosotros">Sobre nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
 
-        .hero{
-            background:#eaf4ff;
-            padding:60px 20px;
-            text-align:center;
-        }
+  <main class="container" id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <h1 id="hero-title">Hacemos que tu hogar brille — limpieza confiable y profesional</h1>
+        <p class="lead">Servicios personalizados para tu casa: limpieza profunda, mantenimiento regular y desinfección con productos seguros para tu familia.</p>
+        <div class="cta" role="region" aria-label="Llamadas a la acción">
+          <a class="btn" href="#contacto">Pide una cotización</a>
+          <a class="btn secondary" href="#servicios">Ver servicios</a>
+        </div>
 
-        .hero h1{
-            font-size:40px;
-            margin-bottom:15px;
-        }
+        <ul style="display:flex;gap:1rem;margin-top:1rem;justify-content:center;flex-wrap:wrap;" class="small">
+          <li>✅ Personal calificado</li>
+          <li>✅ Productos eco-amigables</li>
+          <li>✅ Horarios flexibles</li>
+        </ul>
+      </div>
 
-        .hero p{
-            font-size:18px;
-            margin-bottom:20px;
-        }
+      <aside aria-hidden="true" style="padding:1rem;">
+        <div class="card" style="text-align:center;">
+          <h3 style="margin-top:0;margin-bottom:.4rem">Cotización rápida</h3>
+          <p class="muted" style="margin:0 0 1rem">Describe tu servicio y te contactamos.</p>
+          <a class="btn" href="#contacto">Solicitar contacto</a>
+        </div>
+      </aside>
+    </section>
 
-        .boton{
-            background:#198754;
-            color:white;
-            padding:15px 25px;
-            text-decoration:none;
-            border-radius:8px;
-            font-size:18px;
-        }
+    <section id="servicios" aria-labelledby="servicios-title" style="margin-top:1.5rem">
+      <h2 id="servicios-title">Nuestros servicios</h2>
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <div class="service-icon" style="background:#4caf50">🧹</div>
+          <h3>Limpieza profunda</h3>
+          <p class="muted">Limpieza completa de todas las estancias, cocina, baños, y detalles que suelen pasarse por alto.</p>
+        </article>
 
-        section{
-            padding:40px 20px;
-        }
+        <article class="card" role="listitem">
+          <div class="service-icon" style="background:#2196f3">🏠</div>
+          <h3>Limpieza recurrente</h3>
+          <p class="muted">Planes semanales, quincenales o mensuales adaptados a tu hogar y presupuesto.</p>
+        </article>
 
-        h2{
-            text-align:center;
-            margin-bottom:25px;
-            color:#0B5ED7;
-        }
+        <article class="card" role="listitem">
+          <div class="service-icon" style="background:#ff7043">🧴</div>
+          <h3>Desinfección y sanitización</h3>
+          <p class="muted">Protocolos para eliminar gérmenes con productos seguros y certificados.</p>
+        </article>
 
-        .servicios{
-            display:flex;
-            flex-wrap:wrap;
-            justify-content:center;
-            gap:20px;
-        }
+        <article class="card" role="listitem">
+          <div class="service-icon" style="background:#8e24aa">🔧</div>
+          <h3>Mantenimiento menor</h3>
+          <p class="muted">Reparaciones pequeñas, cambio de bombillas, ajustes y mantenimiento preventivo.</p>
+        </article>
+      </div>
+    </section>
 
-        .card{
-            background:white;
-            width:300px;
-            padding:20px;
-            border-radius:10px;
-            box-shadow:0 0 10px rgba(0,0,0,.15
+    <section id="sobre-nosotros" style="margin-top:1.5rem">
+      <div class="card">
+        <h2>Sobre Fe Clean</h2>
+        <p class="muted">Somos un equipo local con experiencia en limpieza residencial y un enfoque en seguridad, confianza y excelente servicio al cliente. Nuestros trabajadores están verificados y reciben formación en protocolos de limpieza y desinfección.</p>
+      </div>
+    </section>
+
+    <section id="contacto" style="margin-top:1.5rem">
+      <h2>Contacto</h2>
+      <div class="two-col">
+        <div>
+          <p class="muted">Complete el formulario y nos pondremos en contacto para una cotización gratuita.</p>
+
+          <form id="contact-form" aria-label="Formulario de contacto">
+            <label for="name">Nombre</label>
+            <input id="name" name="name" type="text" required placeholder="Tu nombre completo" />
+
+            <label for="phone">Teléfono</label>
+            <input id="phone" name="phone" type="tel" placeholder="+54 9 11 1234 5678" />
+
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" required placeholder="tu@email.com" />
+
+            <label for="service">Servicio</label>
+            <select id="service" name="service" required>
+              <option value="">Selecciona...</option>
+              <option value="profunda">Limpieza profunda</option>
+              <option value="recurrente">Limpieza recurrente</option>
+              <option value="desinfeccion">Desinfección</option>
+              <option value="mantenimiento">Mantenimiento menor</option>
+            </select>
+
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" placeholder="Cuéntanos cuántas habitaciones, baños y cualquier detalle"></textarea>
+
+            <div style="display:flex;gap:.5rem;align-items:center;justify-content:flex-start;margin-top:.5rem">
+              <button type="submit" class="btn">Enviar</button>
+              <button type="reset" class="btn secondary">Borrar</button>
+            </div>
+
+            <p id="form-status" class="small" aria-live="polite" style="margin-top:.5rem"></p>
+          </form>
+        </div>
+
+        <aside class="card" aria-labelledby="info-contacto">
+          <h3 id="info-contacto">Otras formas de contacto</h3>
+          <p class="muted"><strong>Tel:</strong> <a href="tel:+5491112345678">+54 9 11 1234 5678</a></p>
+          <p class="muted"><strong>Email:</strong> <a href="mailto:contacto@feclean.ejemplo">contacto@feclean.ejemplo</a></p>
+          <p class="muted">Atendemos en CABA y alrededores. Cobertura y precios según zona.</p>
+
+          <div style="margin-top:1rem">
+            <strong>Testimonios</strong>
+            <blockquote class="muted" style="margin:0.75rem 0 0;padding-left:.75rem;border-left:3px solid #eee;">
+              "Excelente servicio, personal puntual y detallista. Recomendado." — María G.
+            </blockquote>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <div class="small">&copy; <span id="anio"></span> Fe Clean — Todos los derechos reservados. <span class="muted">Protegemos tu hogar con trabajo de calidad.</span></div>
+    </footer>
+  </main>
+
+  <script>
+    // Fecha dinámica en footer
+    document.getElementById('anio').textContent = new Date().getFullYear();
+
+    // Validación y simulación de envío (no envía realmente)
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      status.textContent = '';
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const service = form.service.value;
+
+      if (!name || !email || !service) {
+        status.textContent = 'Por favor completa los campos requeridos (nombre, correo y servicio).';
+        return;
+      }
+
+      // Aquí podrías implementar fetch() a tu API o servicio de correo
+      status.textContent = 'Enviando...';
+      setTimeout(() => {
+        status.textContent = 'Gracias, hemos recibido tu solicitud. Te contactaremos pronto.';
+        form.reset();
+      }, 900);
+    }, {passive:false});
+  </script>
+</body>
+</html>
