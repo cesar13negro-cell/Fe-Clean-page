@@ -334,3 +334,170 @@
   </script>
 </body>
 </html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fe Clean — Limpieza y Mantenimiento Residencial</title>
+  <meta name="description" content="Fe Clean - Servicios profesionales de limpieza y mantenimiento residencial. Limpieza profunda, servicios recurrentes, mantenimiento y desinfección." />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Fe Clean — inicio">
+        <div class="logo" aria-hidden="true">FC</div>
+        <div class="brand-text">
+          <span class="brand-name">Fe Clean</span>
+          <span class="brand-tag">Limpieza y Mantenimiento Residencial</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">☰</button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title" role="region">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <h1 id="hero-title">Hacemos que tu hogar brille</h1>
+          <p class="lead">Servicios confiables: limpieza profunda, planes recurrentes y desinfección con productos seguros.</p>
+          <div class="cta">
+            <a class="btn primary" href="#contacto">Pide una cotización</a>
+            <a class="btn outline" href="#servicios">Ver servicios</a>
+          </div>
+
+          <ul class="features" aria-hidden="false">
+            <li>Personal calificado</li>
+            <li>Productos eco-amigables</li>
+            <li>Horarios flexibles</li>
+          </ul>
+        </div>
+
+        <aside class="hero-card" aria-hidden="false">
+          <div class="card-inner">
+            <h3>Cotización rápida</h3>
+            <p class="muted small">Describe tu servicio y te contactamos.</p>
+            <a class="btn primary" href="#contacto">Solicitar contacto</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="servicios" class="section container" aria-labelledby="servicios-title">
+      <h2 id="servicios-title">Nuestros servicios</h2>
+      <div class="grid services-grid" role="list">
+        <article class="card service" role="listitem">
+          <div class="service-icon" aria-hidden="true">🧹</div>
+          <h3>Limpieza profunda</h3>
+          <p class="muted">Limpieza completa de todas las estancias, cocina, baños, y detalles.</p>
+        </article>
+
+        <article class="card service" role="listitem">
+          <div class="service-icon" aria-hidden="true">🏠</div>
+          <h3>Limpieza recurrente</h3>
+          <p class="muted">Planes semanales, quincenales o mensuales adaptados a tu hogar.</p>
+        </article>
+
+        <article class="card service" role="listitem">
+          <div class="service-icon" aria-hidden="true">🧴</div>
+          <h3>Desinfección y sanitización</h3>
+          <p class="muted">Protocolos para eliminar gérmenes con productos seguros y certificados.</p>
+        </article>
+
+        <article class="card service" role="listitem">
+          <div class="service-icon" aria-hidden="true">🔧</div>
+          <h3>Mantenimiento menor</h3>
+          <p class="muted">Reparaciones pequeñas, cambio de bombillas y ajustes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="sobre-nosotros" class="section container" aria-labelledby="sobre-title">
+      <h2 id="sobre-title">Sobre Fe Clean</h2>
+      <div class="card">
+        <p class="muted">Equipo local con experiencia en limpieza residencial. Seguridad, confianza y excelente servicio al cliente.</p>
+      </div>
+    </section>
+
+    <section id="contacto" class="section container" aria-labelledby="contacto-title">
+      <h2 id="contacto-title">Contacto</h2>
+      <div class="contact-grid">
+        <form id="contact-form" class="card contact-form" aria-label="Formulario de contacto" novalidate>
+          <div class="form-row">
+            <label for="name">Nombre</label>
+            <input id="name" name="name" type="text" required placeholder="Tu nombre completo" />
+          </div>
+
+          <div class="form-row two-cols">
+            <div>
+              <label for="phone">Teléfono</label>
+              <input id="phone" name="phone" type="tel" placeholder="+54 9 11 1234 5678" />
+            </div>
+            <div>
+              <label for="email">Correo electrónico</label>
+              <input id="email" name="email" type="email" required placeholder="tu@email.com" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="service">Servicio</label>
+            <select id="service" name="service" required>
+              <option value="">Selecciona...</option>
+              <option value="profunda">Limpieza profunda</option>
+              <option value="recurrente">Limpieza recurrente</option>
+              <option value="desinfeccion">Desinfección</option>
+              <option value="mantenimiento">Mantenimiento menor</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" placeholder="Cuéntanos cuántas habitaciones, baños y cualquier detalle"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Enviar</button>
+            <button type="reset" class="btn outline">Borrar</button>
+          </div>
+
+          <p id="form-status" class="small" aria-live="polite"></p>
+        </form>
+
+        <aside class="card contact-info" aria-labelledby="info-contacto">
+          <h3 id="info-contacto">Otras formas de contacto</h3>
+          <p class="muted"><strong>Tel:</strong> <a href="tel:+5491112345678">+54 9 11 1234 5678</a></p>
+          <p class="muted"><strong>Email:</strong> <a href="mailto:contacto@feclean.ejemplo">contacto@feclean.ejemplo</a></p>
+          <p class="muted">Atendemos en CABA y alrededores. Cobertura y precios según zona.</p>
+
+          <div class="testimonials">
+            <strong>Testimonios</strong>
+            <blockquote class="muted">"Excelente servicio, personal puntual y detallista. Recomendado." — María G.</blockquote>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="small">&copy; <span id="anio"></span> Fe Clean — Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
